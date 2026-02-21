@@ -11,7 +11,7 @@ import SwiftUI
 struct whiskedApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Login()
         }
     }
 }

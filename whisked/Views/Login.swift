@@ -28,6 +28,15 @@ struct Login: View{
             SecureField("Password", text:$password)
                 .textFieldStyle(.roundedBorder)
             
+            Button(action: {}) {
+                Text("Sign In")
+            }
+            .padding(.all, 12)
+            .foregroundColor(.white)
+            .background(Color.green)
+                
+            
+            
                         
                 
             
