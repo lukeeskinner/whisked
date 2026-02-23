@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct Login: View{
     
@@ -15,40 +14,102 @@ struct Login: View{
     @State private var isLoading = false
     @State private var errorMessage : String?
     
-    var body: some View {
-        VStack(spacing: 25){
-           Text("Welcome to whisked")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundStyle(.green)
-            TextField("Username", text: $username)
-                .textFieldStyle(.roundedBorder)
-                .autocapitalization(.none)
-                .autocorrectionDisabled(true)
-            SecureField("Password", text:$password)
-                .textFieldStyle(.roundedBorder)
-            
-            Button(action: {}) {
-                Text("Sign In")
-            }
-            .padding(.all, 12)
-            .foregroundColor(.white)
-            .background(Color.green)
-                
-            
-            
-                        
-                
-            
-            
-        }
-        
-        
+    var isFormValid : Bool {
+        return !username.isEmpty && !password.isEmpty
     }
     
+    var body: some View {
+        VStack{
+            
+            Spacer()
+            VStack(spacing: 8){
+                Text("Whisked")
+                    .font(.system(size: 40, weight: .bold))
+                
+                Text("Log your matcha. Discover new favorites.")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.bottom, 40)
+            
+            VStack(spacing: 16){
+                TextField("Username or Email", text: $username)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled(true)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(12)
+                
+                SecureField("Password", text:$password)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(12)
+                
+            }
+            
+            if let errorMessage {
+                Text(errorMessage)
+                    .foregroundStyle(.red)
+                    .font(.footnote)
+                    .padding(.top, 8)
+            }
+            
+            
     
+            
+            Button() {
+                signIn()
+                
+            } label: {
+                if isLoading {
+                    ProgressView()
+                    .tint(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                }
+                else {
+                    Text("Sign in")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                }
+            }
+            
+            .background(Color.green)
+            .foregroundColor(.white)
+            .cornerRadius(14)
+            .disabled(!isFormValid || isLoading)
+            .padding(.top, 16)
+            
+            HStack {
+                Text("Don't have an account?")
+                    .foregroundStyle(.secondary)
+                Button("Sign Up"){
+                    // nav
+                }
+                
+                .fontWeight(.semibold)
+            }
+            .font(.footnote)
+            .padding(.bottom, 30)
     
+            
+        }
+        .padding(.horizontal, 24)
+    }
     
+    private func signIn() {
+            isLoading = true
+            errorMessage = nil
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                isLoading = false
+                
+                if username != "test" {
+                    errorMessage = "Invalid username or password"
+                }
+            }
+        }
 }
 
 
