@@ -21,7 +21,11 @@ struct Login: View{
     var body: some View {
         VStack{
             
-            Spacer()
+            Image("whisked_logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 300, height: 300)
+
             VStack(spacing: 8){
                 Text("Whisked")
                     .font(.system(size: 40, weight: .bold))
@@ -73,6 +77,7 @@ struct Login: View{
                         .frame(maxWidth: .infinity)
                         .padding()
                 }
+                
             }
             
             .background(Color.green)
@@ -80,6 +85,7 @@ struct Login: View{
             .cornerRadius(14)
             .disabled(!isFormValid || isLoading)
             .padding(.top, 16)
+            Spacer()
             
             HStack {
                 Text("Don't have an account?")

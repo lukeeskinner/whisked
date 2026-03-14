@@ -58,6 +58,11 @@
 			path = whiskedUITests;
 			sourceTree = "<group>";
 		};
+		356B38292F66028100D948CB /* pictures */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = pictures;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		35464D142F2FEDDF00658A6C = {
 			isa = PBXGroup;
 			children = (
+				356B38292F66028100D948CB /* pictures */,
 				35464D1F2F2FEDDF00658A6C /* whisked */,
 				35464D2D2F2FEDE000658A6C /* whiskedTests */,
 				35464D372F2FEDE000658A6C /* whiskedUITests */,
@@ -122,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				35464D1F2F2FEDDF00658A6C /* whisked */,
+				356B38292F66028100D948CB /* pictures */,
 			);
 			name = whisked;
 			packageProductDependencies = (
