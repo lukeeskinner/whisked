@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authService : AuthenticationService
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Welcome to whisked")
-                .foregroundStyle(.green)
-                
-        }
-        .padding()
+//        if authService.isAuthenticated {
+//            Text("logged in!")
+//            // home screen
+//        }
+//        else {
+//            Login()
+//        }
+//        
+        Signup()
     }
 }
 

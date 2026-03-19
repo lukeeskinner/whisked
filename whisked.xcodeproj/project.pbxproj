@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		356B38302F66064500D948CB /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 356B382F2F66064500D948CB /* Auth0 */; };
+		356B38502F6739F700D948CB /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 356B384F2F6739F700D948CB /* Auth0.plist */; };
+		35BF813F2F673BD900B305C8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF813E2F673BD200B305C8 /* AuthenticationService.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		35464D2B2F2FEDE000658A6C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +33,8 @@
 		35464D1D2F2FEDDF00658A6C /* whisked.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whisked.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35464D2A2F2FEDE000658A6C /* whiskedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whiskedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35464D342F2FEDE000658A6C /* whiskedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whiskedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		356B384F2F6739F700D948CB /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		35BF813E2F673BD200B305C8 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -70,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356B38302F66064500D948CB /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +102,8 @@
 		35464D142F2FEDDF00658A6C = {
 			isa = PBXGroup;
 			children = (
+				35BF813E2F673BD200B305C8 /* AuthenticationService.swift */,
+				356B384F2F6739F700D948CB /* Auth0.plist */,
 				356B38292F66028100D948CB /* pictures */,
 				35464D1F2F2FEDDF00658A6C /* whisked */,
 				35464D2D2F2FEDE000658A6C /* whiskedTests */,
@@ -132,6 +143,7 @@
 			);
 			name = whisked;
 			packageProductDependencies = (
+				356B382F2F66064500D948CB /* Auth0 */,
 			);
 			productName = whisked;
 			productReference = 35464D1D2F2FEDDF00658A6C /* whisked.app */;
@@ -215,6 +227,9 @@
 			);
 			mainGroup = 35464D142F2FEDDF00658A6C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				356B382E2F66064500D948CB /* XCRemoteSwiftPackageReference "Auth0" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 35464D1E2F2FEDDF00658A6C /* Products */;
 			projectDirPath = "";
@@ -232,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356B38502F6739F700D948CB /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35BF813F2F673BD900B305C8 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +615,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		356B382E2F66064500D948CB /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		356B382F2F66064500D948CB /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 356B382E2F66064500D948CB /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 35464D152F2FEDDF00658A6C /* Project object */;
 }
